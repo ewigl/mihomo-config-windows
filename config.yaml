@@ -361,10 +361,12 @@ rules:
   ### SigmaGUI
   - PROCESS-NAME,SigmaGUI.exe,SigmaGUI
 
-  # 域名规则
+  # 官方规则
   ## 直连
   - RULE-SET,private,DIRECT
+  - RULE-SET,privatecidr,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
+  - RULE-SET,cncidr,DIRECT,no-resolve
   - RULE-SET,apple,DIRECT
   - RULE-SET,icloud,DIRECT
   ## 选择
@@ -390,14 +392,8 @@ rules:
   - RULE-SET,spotify,Spotify
   - RULE-SET,supercell,Supercell
   - RULE-SET,telegram,Telegram
-  - RULE-SET,yandex,Yandex
-
-  # IP 规则
-  ## 直连
-  - RULE-SET,privatecidr,DIRECT,no-resolve
-  - RULE-SET,cncidr,DIRECT,no-resolve
-  ## 选择
   - RULE-SET,telegramcidr,Telegram,no-resolve
+  - RULE-SET,yandex,Yandex
 
   # 其他
   - MATCH,其他
