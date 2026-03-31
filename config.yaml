@@ -114,16 +114,6 @@ proxy-groups:
     <<: *all-proxies
     proxies: [台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连]
 
-  - name: DLsite
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/dlsite.png
-    <<: *all-proxies
-    proxies: [日本, 默认, 美国, 台湾, 香港, 狮城, ⚡ 直连]
-
-  - name: DMM
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/dmm.png
-    <<: *all-proxies
-    proxies: [日本, 默认, 美国, 台湾, 香港, 狮城, ⚡ 直连]
-
   - name: EHentai
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/e-hentai.png
     <<: *default-proxies
@@ -133,38 +123,12 @@ proxy-groups:
     <<: *all-proxies
     proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
-  - name: GitHub
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/github.png
-    <<: *all-proxies
-    proxies: [Microsoft, 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
-
-  - name: Gemini
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/gemini.png
-    <<: *all-proxies
-    proxies: [Google, 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
-
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
     <<: *default-proxies
 
   - name: Imgur
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/imgur.png
-    <<: *default-proxies
-
-  - name: Microsoft
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/microsoft.png
-    <<: *default-proxies
-
-  - name: Netflix
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/netflix.png
-    <<: *default-proxies
-
-  - name: OpenAI
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/openai.png
-    <<: *default-proxies
-
-  - name: Spotify
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/spotify.png
     <<: *default-proxies
 
   - name: SteamCN
@@ -175,24 +139,6 @@ proxy-groups:
   - name: SteamGlobal
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/steam.png
     <<: *default-proxies
-
-  - name: Supercell
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/supercell.png
-    <<: *default-proxies
-
-  - name: Telegram
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/telegram.png
-    <<: *default-proxies
-
-  - name: Yandex
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/yandex.png
-    <<: *all-proxies
-    proxies: [默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
-
-  - name: YouTube
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/youtube.png
-    <<: *all-proxies
-    proxies: [Google, 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
   # 自定义
   - name: IDM
@@ -244,14 +190,6 @@ rule-providers:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
 
-  dlsite:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dlsite.mrs"
-
-  dmm:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/dmm.mrs"
-
   ehentai:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ehentai.mrs"
@@ -260,17 +198,9 @@ rule-providers:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs"
 
-  github:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"
-
   google:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"
-
-  google-gemini:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google-gemini.mrs"
 
   icloud:
     <<: *domain
@@ -280,25 +210,9 @@ rule-providers:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/imgur.mrs"
 
-  microsoft:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"
-
-  netflix:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"
-
-  openai:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.mrs"
-
   private:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"
-
-  spotify:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/spotify.mrs"
 
   steam:
     <<: *domain
@@ -307,22 +221,6 @@ rule-providers:
   steam@cn:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam@cn.mrs"
-
-  supercell:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/supercell.mrs"
-
-  telegram:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"
-
-  yandex:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/yandex.mrs"
-
-  youtube:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"
 
   ## IP 规则集
   cncidr:
@@ -333,10 +231,6 @@ rule-providers:
     <<: *cidr
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/private.mrs"
 
-  telegramcidr:
-    <<: *cidr
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat//meta/geo/geoip/telegram.mrs"
-
 sub-rules:
   # qBittorrent: 特定链接代理，其他链接由 qBittorrent Selector 决定。
   q_bittorrent:
@@ -344,8 +238,6 @@ sub-rules:
     - DOMAIN-SUFFIX,fosshub.com,默认
     # RSS 源等
     - DOMAIN-SUFFIX,mikanani.me,默认
-    # Trackers 更新
-    - RULE-SET,github,GitHub
     # 其他
     - MATCH,qBittorrent
 
@@ -371,29 +263,15 @@ rules:
   - RULE-SET,icloud,DIRECT
   ## 选择
   ### Google
-  - RULE-SET,google-gemini,Gemini
-  - RULE-SET,youtube,YouTube
   - RULE-SET,google,Google
-  ### Microsoft
-  - RULE-SET,github,GitHub
-  - RULE-SET,microsoft,Microsoft
   ### Steam
   - RULE-SET,steam@cn,SteamCN
   - RULE-SET,steam,SteamGlobal
   ### 其他
   - RULE-SET,bahamut,Bahamut
-  - RULE-SET,dlsite,DLsite
-  - RULE-SET,dmm,DMM
   - RULE-SET,ehentai,EHentai
   - RULE-SET,epicgames,EpicGames
   - RULE-SET,imgur,Imgur
-  - RULE-SET,netflix,Netflix
-  - RULE-SET,openai,OpenAI
-  - RULE-SET,spotify,Spotify
-  - RULE-SET,supercell,Supercell
-  - RULE-SET,telegram,Telegram
-  - RULE-SET,telegramcidr,Telegram,no-resolve
-  - RULE-SET,yandex,Yandex
 
   # 其他
   - MATCH,其他
