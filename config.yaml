@@ -114,15 +114,6 @@ proxy-groups:
     <<: *all-proxies
     proxies: [台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连]
 
-  - name: EHentai
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/e-hentai.png
-    <<: *default-proxies
-
-  - name: EpicGames
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/epic-games.png
-    <<: *all-proxies
-    proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
-
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
     <<: *default-proxies
@@ -189,14 +180,6 @@ rule-providers:
   cn:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
-
-  ehentai:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ehentai.mrs"
-
-  epicgames:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs"
 
   google:
     <<: *domain
@@ -269,8 +252,6 @@ rules:
   - RULE-SET,steam,SteamGlobal
   ### 其他
   - RULE-SET,bahamut,Bahamut
-  - RULE-SET,ehentai,EHentai
-  - RULE-SET,epicgames,EpicGames
   - RULE-SET,imgur,Imgur
 
   # 其他
