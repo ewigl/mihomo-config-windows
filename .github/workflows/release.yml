@@ -83,26 +83,11 @@ jobs:
       dashboard_version: ${{ needs.get-latest-versions.outputs.dashboard_version }}
       tag: ${{ needs.setup-and-tag.outputs.tag_name }}
 
-  build-android:
-    needs: [get-latest-versions, setup-and-tag]
-    uses: ./.github/workflows/build-android.yml
-    with:
-      mihomo_version: ${{ needs.get-latest-versions.outputs.mihomo_version }}
-      dashboard_version: ${{ needs.get-latest-versions.outputs.dashboard_version }}
-      tag: ${{ needs.setup-and-tag.outputs.tag_name }}
-
   create-release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    needs:
-      [
-        get-latest-versions,
-        setup-and-tag,
-        upload-raw,
-        build-windows,
-        build-android,
-      ]
+    needs: [get-latest-versions, setup-and-tag, upload-raw, build-windows]
     steps:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
