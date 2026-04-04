@@ -136,6 +136,10 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/idm.png
     <<: *default-proxies
 
+  - name: FH4
+    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/fh4.png
+    <<: *default-proxies
+
   - name: NRftW
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/nrftw.png
     <<: *all-proxies
@@ -231,6 +235,8 @@ rules:
   - PROCESS-NAME,NoRestForTheWicked.exe,NRftW
   ### Internet Download Manager
   - PROCESS-NAME,IDMan.exe,IDM
+  ### Forza Horizon 4
+  - PROCESS-NAME,ForzaHorizon4.exe,FH4
   ### qBittorrent
   - SUB-RULE,(PROCESS-NAME,qbittorrent.exe),q_bittorrent
   ### SigmaGUI
