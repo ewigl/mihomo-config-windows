@@ -30,6 +30,9 @@ sniffer:
 tun:
   enable: true
   stack: mixed
+  auto-route: true
+  strict-route: true
+  auto-detect-interface: true
   dns-hijack:
     - any:53
     - tcp://any:53
@@ -132,6 +135,10 @@ proxy-groups:
     <<: *default-proxies
 
   # 自定义
+  - name: Elden Ring
+    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/eldenring.png
+    <<: *default-proxies
+
   - name: IDM
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/idm.png
     <<: *default-proxies
@@ -231,6 +238,8 @@ sub-rules:
 rules:
   # 自定规则
   ## 选择
+  ### 艾尔登法环
+  - PROCESS-NAME,eldenring.exe,Elden Ring
   ### 恶意不息
   - PROCESS-NAME,NoRestForTheWicked.exe,NRftW
   ### Internet Download Manager
