@@ -157,10 +157,6 @@ proxy-groups:
     <<: *all-proxies
     proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
-  - name: SigmaGUI
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/sigmagui.png
-    <<: *default-proxies
-
   # 其他
   - name: 其他
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/misc.png
@@ -232,6 +228,7 @@ sub-rules:
     - DOMAIN-SUFFIX,fosshub.com,默认
     # RSS 源等
     - DOMAIN-SUFFIX,mikanani.me,默认
+    - DOMAIN-SUFFIX,nyaa.si,默认
     # 其他
     - MATCH,qBittorrent
 
@@ -248,8 +245,6 @@ rules:
   - PROCESS-NAME,ForzaHorizon4.exe,FH4
   ### qBittorrent
   - SUB-RULE,(PROCESS-NAME,qbittorrent.exe),q_bittorrent
-  ### SigmaGUI
-  - PROCESS-NAME,SigmaGUI.exe,SigmaGUI
 
   # 官方规则
   ## 直连
