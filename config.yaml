@@ -137,11 +137,13 @@ proxy-groups:
   # 自定义
   - name: Elden Ring
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/eldenring.png
-    <<: *default-proxies
+    <<: *all-proxies
+    proxies: [ 香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连 ]
 
   - name: FH4
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/fh4.png
-    <<: *default-proxies
+    <<: *all-proxies
+    proxies: [ 香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连 ]
 
   - name: NRftW
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/nrftw.png
