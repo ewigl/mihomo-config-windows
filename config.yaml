@@ -21,17 +21,16 @@ sniffer:
   enable: true
   sniff:
     HTTP:
-      ports: [ 80, 8080-8880 ]
+      ports: [80, 8080-8880]
     TLS:
-      ports: [ 443, 8443 ]
+      ports: [443, 8443]
     QUIC:
-      ports: [ 443, 8443 ]
+      ports: [443, 8443]
 
 tun:
   enable: true
   stack: mixed
   auto-route: true
-  strict-route: true
   auto-detect-interface: true
   dns-hijack:
     - any:53
@@ -71,14 +70,14 @@ proxies-anchor:
   default-proxies: &default-proxies
     type: select
     include-all-providers: true
-    proxies: [ 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连 ]
+    proxies: [默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
 proxy-groups:
   # 默认
   - name: 默认
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/default.png
     type: select
-    proxies: [ 自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连 ]
+    proxies: [自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
   # 自动选择
   - name: 自动选择
@@ -115,7 +114,7 @@ proxy-groups:
   - name: Bahamut
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/bahamut.png
     <<: *all-proxies
-    proxies: [ 台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连 ]
+    proxies: [台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连]
 
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
@@ -128,7 +127,7 @@ proxy-groups:
   - name: SteamCN
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/steam.png
     <<: *all-proxies
-    proxies: [ ⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本 ]
+    proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
   - name: SteamGlobal
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/steam.png
@@ -138,22 +137,22 @@ proxy-groups:
   - name: Elden Ring
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/eldenring.png
     <<: *all-proxies
-    proxies: [ 香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连 ]
+    proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
 
   - name: FH4
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/fh4.png
     <<: *all-proxies
-    proxies: [ 香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连 ]
+    proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
 
   - name: NRftW
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/nrftw.png
     <<: *all-proxies
-    proxies: [ 香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连 ]
+    proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
 
   - name: qBittorrent
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/qbittorrent.png
     <<: *all-proxies
-    proxies: [ ⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本 ]
+    proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
   # 其他
   - name: 其他
@@ -165,7 +164,7 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/global.png
     type: select
     include-all-providers: true
-    proxies: [ 默认, 自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连 ]
+    proxies: [默认, 自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
 rule-anchor:
   domain: &domain { type: http, interval: 86400, behavior: domain, format: mrs }
