@@ -224,6 +224,7 @@ sub-rules:
     # 检查更新
     - DOMAIN-SUFFIX,fosshub.com,默认
     - DOMAIN-SUFFIX,github.io,默认
+    - DOMAIN-SUFFIX,githubusercontent.com,默认
     - DOMAIN-SUFFIX,qbittorrent.org,默认
     # RSS 源等
     - DOMAIN-SUFFIX,mikanani.me,默认
