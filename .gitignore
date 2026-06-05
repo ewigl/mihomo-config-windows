@@ -3,5 +3,7 @@ rules/
 ui/
 zashboard/
 cache.db
+geoip.metadb
+GeoSite.dat
 mihomo.exe
 mihomo-windows-amd64.exe
