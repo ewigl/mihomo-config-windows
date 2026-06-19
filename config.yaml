@@ -12,7 +12,7 @@ tcp-concurrent: true
 
 external-controller: localhost:9090
 external-ui: ui
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-no-fonts.zip"
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 profile:
   store-selected: true
@@ -32,27 +32,27 @@ dns:
   cache-algorithm: arc
   listen: :53
   enhanced-mode: redir-host
-  # nameserver-policy:
-  #   "rule-set:cn":
-  #     - https://dns.alidns.com/dns-query
-  #     - https://doh.pub/dns-query
-  # nameserver:
-  #   - https://dns.alidns.com/dns-query
-  #   - https://doh.pub/dns-query
-  #   - tls://223.5.5.5
-  #   - tls://119.29.29.29
-  # fallback:
-  #   - https://1.1.1.1/dns-query
-  #   - https://dns.google/dns-query
-  #   - https://101.101.101.101/dns-query
-  #   - tls://1.1.1.1
-  #   - tls://8.8.8.8
-  #   - tls://101.101.101.101
-  # fallback-filter:
-  #   geoip: true
-  #   geoip-code: CN
-  #   geosite:
-  #     - gfw
+  nameserver-policy:
+    "rule-set:cn":
+      - https://dns.alidns.com/dns-query
+      - https://doh.pub/dns-query
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - tls://223.5.5.5
+    - tls://119.29.29.29
+  fallback:
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - https://101.101.101.101/dns-query
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - tls://101.101.101.101
+  fallback-filter:
+    geoip: true
+    geoip-code: CN
+    geosite:
+      - gfw
 
 proxies:
   - name: ⚡ 直连
