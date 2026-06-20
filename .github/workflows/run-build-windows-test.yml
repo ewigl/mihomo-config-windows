@@ -28,5 +28,3 @@ jobs:
       dashboard_version: ${{ github.event.inputs.dashboard_version }}
       tag: ${{ github.event.inputs.tag }}
       mihomo_asset_keyword: ${{ github.event.inputs.mihomo_asset_keyword }}
-    secrets:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
