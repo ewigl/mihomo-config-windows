@@ -2,6 +2,14 @@ name: Release
 
 on:
   workflow_dispatch:
+    inputs:
+      action:
+        description: Action to perform.
+        required: true
+        type: choice
+        options:
+          - release
+          - build-for-windows
 
 concurrency:
   group: ${{ github.workflow }}
@@ -84,6 +92,7 @@ jobs:
       tag: ${{ needs.setup-and-tag.outputs.tag_name }}
 
   create-release:
+    if: ${{ github.event.inputs.action == 'release' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
