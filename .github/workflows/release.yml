@@ -92,7 +92,7 @@ jobs:
       tag: ${{ needs.setup-tag.outputs.tag_name }}
 
   create-release:
-    if: ${{ github.event.inputs.action == 'release' }}
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'release' }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
