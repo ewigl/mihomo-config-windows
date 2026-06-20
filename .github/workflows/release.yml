@@ -77,9 +77,9 @@ jobs:
           ref: ${{ needs.setup-and-tag.outputs.tag_name }}
 
       - name: Upload raw artifacts
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
-          name: raw-artifacts
+          archive: false
           path: |
             config.yaml
 
@@ -109,7 +109,7 @@ jobs:
         with:
           tag_name: ${{ needs.setup-and-tag.outputs.tag_name }}
           name: Release ${{ needs.setup-and-tag.outputs.tag_name }}
-          files: artifacts/**/*
+          files: artifacts/*
           generate_release_notes: false
           body: |
             - **Mihomo**: `${{ needs.get-latest-versions.outputs.mihomo_version }}`
