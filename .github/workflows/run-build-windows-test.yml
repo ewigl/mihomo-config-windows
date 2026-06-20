@@ -1,0 +1,32 @@
+name: Run Build Windows (test)
+
+on:
+  workflow_dispatch:
+    inputs:
+      mihomo_version:
+        description: Mihomo release to download (use 'latest' to pick latest)
+        required: true
+        default: latest
+      dashboard_version:
+        description: Dashboard version (use 'latest')
+        required: true
+        default: latest
+      tag:
+        description: Repo ref to checkout (branch or tag)
+        required: true
+        default: main
+      mihomo_asset_keyword:
+        description: Keyword to match mihomo windows asset
+        required: false
+        default: mihomo-windows-amd64-v3-v*.zip
+
+jobs:
+  call-build:
+    uses: ./.github/workflows/build-windows.yml
+    with:
+      mihomo_version: ${{ github.event.inputs.mihomo_version }}
+      dashboard_version: ${{ github.event.inputs.dashboard_version }}
+      tag: ${{ github.event.inputs.tag }}
+      mihomo_asset_keyword: ${{ github.event.inputs.mihomo_asset_keyword }}
+    secrets:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
