@@ -104,6 +104,7 @@ jobs:
         with:
           path: artifacts
           merge-multiple: true
+          skip-decompress: true
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
