@@ -109,12 +109,21 @@ proxy-groups:
     <<: *all-proxies
     proxies: [台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连]
 
+  - name: GitHub
+    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/github.png
+    <<: *all-proxies
+    proxies: [Microsoft, 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
+
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
     <<: *default-proxies
 
   - name: Imgur
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/imgur.png
+    <<: *default-proxies
+
+  - name: Microsoft
+    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/microsoft.png
     <<: *default-proxies
 
   - name: SteamCN
@@ -161,10 +170,6 @@ rule-anchor:
 rule-providers:
   # Mihomo 规则集: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite
   ## 域名规则集
-  apple:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple.mrs"
-
   bahamut:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs"
@@ -173,17 +178,21 @@ rule-providers:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
 
+  github:
+    <<: *domain
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"
+
   google:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"
 
-  icloud:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/icloud.mrs"
-
   imgur:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/imgur.mrs"
+
+  microsoft:
+    <<: *domain
+    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"
 
   private:
     <<: *domain
@@ -208,6 +217,8 @@ rule-providers:
 
 rules:
   # 自定规则
+  ## 直连
+  - PROCESS-NAME,piliplus.exe,DIRECT
   ## 选择
   ### 艾尔登法环
   - PROCESS-NAME,eldenring.exe,Elden Ring
@@ -222,11 +233,12 @@ rules:
   - RULE-SET,privatecidr,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
   - RULE-SET,cncidr,DIRECT,no-resolve
-  - RULE-SET,apple,DIRECT
-  - RULE-SET,icloud,DIRECT
   ## 选择
   ### Google
   - RULE-SET,google,Google
+  ### Microsoft
+  - RULE-SET,github,GitHub
+  - RULE-SET,microsoft,Microsoft
   ### Steam
   - RULE-SET,steam@cn,SteamCN
   - RULE-SET,steam,SteamGlobal
