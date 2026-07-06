@@ -1,5 +1,5 @@
-mixed-port: 8486
-allow-lan: true
+# mixed-port: 8486
+# allow-lan: true
 
 mode: rule
 log-level: warning
