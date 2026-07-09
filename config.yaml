@@ -216,6 +216,8 @@ rules:
   # 自定规则
   ## 直连
   - PROCESS-NAME,piliplus.exe,DIRECT
+  - PROCESS-NAME,WeChatAppEx.exe,DIRECT
+  - PROCESS-NAME,Weixin.exe,DIRECT
   ## 选择
   ### 艾尔登法环
   - PROCESS-NAME,eldenring.exe,Elden Ring
