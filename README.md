@@ -7,4 +7,3 @@ https://ewigl.github.io/projects/mihomo/
 - WEB UI 使用 [Zashboard](https://github.com/Zephyruso/zashboard) 无字体版本。
 - 分组[图标](https://github.com/ewigl/licons)来源于网络。
 - 参考：[官方文档](https://wiki.metacubex.one/config/)。
-- [Android 配置](https://github.com/ewigl/mihomo-config-bfr)。
