@@ -60,7 +60,7 @@ proxies-anchor:
   default-proxies: &default-proxies
     type: select
     include-all-providers: true
-    proxies: [默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
+    proxies: [默认, 美国, 台湾, 香港, 狮城, 日本]
 
 proxy-groups:
   # 默认
@@ -104,12 +104,12 @@ proxy-groups:
   - name: Bahamut
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/bahamut.png
     <<: *all-proxies
-    proxies: [台湾, 默认, 美国, 香港, 狮城, 日本, ⚡ 直连]
+    proxies: [台湾, 默认, 美国, 香港, 狮城, 日本]
 
   - name: GitHub
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/github.png
     <<: *all-proxies
-    proxies: [Microsoft, 默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
+    proxies: [Microsoft, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
