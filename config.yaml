@@ -49,14 +49,6 @@ proxies-anchor:
     type: select
     include-all-providers: true
 
-  all-proxies-auto-select: &all-proxies-auto-select
-    type: url-test
-    include-all-providers: true
-
-  all-proxies-fallback: &all-proxies-fallback
-    type: fallback
-    include-all-providers: true
-
   default-proxies: &default-proxies
     type: select
     include-all-providers: true
@@ -72,32 +64,33 @@ proxy-groups:
   # 自动选择
   - name: 自动选择
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/auto.png
-    <<: *all-proxies-auto-select
+    type: url-test
+    include-all-providers: true
 
   # 区域
   - name: 美国
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/flags/us.png
-    <<: *all-proxies-fallback
+    <<: *all-proxies
     filter: "US|🇺🇸|美国|United States"
 
   - name: 台湾
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/flags/cn.png
-    <<: *all-proxies-fallback
+    <<: *all-proxies
     filter: "TW|🇨🇳|🇹🇼|台湾|Taiwan"
 
   - name: 香港
     icon: http://raw.githubusercontent.com/ewigl/licons/refs/heads/main/flags/hk.png
-    <<: *all-proxies-fallback
+    <<: *all-proxies
     filter: "HK|🇭🇰|香港|HongKong|Hong Kong"
 
   - name: 狮城
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/flags/sg.png
-    <<: *all-proxies-fallback
+    <<: *all-proxies
     filter: "SG|🇸🇬|新加坡|狮城|Singapore"
 
   - name: 日本
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/flags/jp.png
-    <<: *all-proxies-fallback
+    <<: *all-proxies
     filter: "JP|🇯🇵|日本|Japan"
 
   # 服务
