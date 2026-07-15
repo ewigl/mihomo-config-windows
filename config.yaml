@@ -52,13 +52,13 @@ proxies-anchor:
   default-proxies: &default-proxies
     type: select
     include-all-providers: true
-    proxies: [自动选择, 默认, 美国, 台湾, 香港, 狮城, 日本]
+    proxies: [默认, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
 proxy-groups:
   # 默认
   - name: 默认
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/default.png
-    <<: *all-proxies
+    type: select
     proxies: [自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
   # 自动选择
@@ -94,22 +94,8 @@ proxy-groups:
     filter: "JP|🇯🇵|日本|Japan"
 
   # 服务
-  - name: Bahamut
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/bahamut.png
-    <<: *all-proxies
-    proxies: [台湾, 默认, 美国, 香港, 狮城, 日本]
-
-  - name: GitHub
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/github.png
-    <<: *all-proxies
-    proxies: [Microsoft, 默认, 美国, 台湾, 香港, 狮城, 日本]
-
   - name: Google
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
-    <<: *default-proxies
-
-  - name: Imgur
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/imgur.png
     <<: *default-proxies
 
   - name: Microsoft
@@ -120,10 +106,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/steam.png
     <<: *all-proxies
     proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
-
-  - name: SteamGlobal
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/steam.png
-    <<: *default-proxies
 
   # 自定义
   - name: Elden Ring
@@ -149,7 +131,9 @@ proxy-groups:
   # 全局
   - name: GLOBAL
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/global.png
-    <<: *default-proxies
+    type: select
+    include-all-providers: true
+    proxies: [默认, 自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
 rule-anchor:
   domain: &domain { type: http, interval: 86400, behavior: domain, format: mrs }
@@ -158,25 +142,13 @@ rule-anchor:
 rule-providers:
   # Mihomo 规则集: https://github.com/MetaCubeX/meta-rules-dat/blob/meta/geo/geosite
   ## 域名规则集
-  bahamut:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/bahamut.mrs"
-
   cn:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
 
-  github:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"
-
   google:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"
-
-  imgur:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/imgur.mrs"
 
   microsoft:
     <<: *domain
@@ -185,10 +157,6 @@ rule-providers:
   private:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"
-
-  steam:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"
 
   steam@cn:
     <<: *domain
@@ -217,24 +185,14 @@ rules:
   ### Forza Horizon 4
   - PROCESS-NAME,ForzaHorizon4.exe,FH4
 
-  # 官方规则
-  ## 直连
+  - RULE-SET,microsoft,Microsoft
   - RULE-SET,private,DIRECT
   - RULE-SET,privatecidr,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
   - RULE-SET,cncidr,DIRECT,no-resolve
-  ## 选择
-  ### Google
-  - RULE-SET,google,Google
-  ### Microsoft
-  - RULE-SET,github,GitHub
-  - RULE-SET,microsoft,Microsoft
-  ### Steam
-  - RULE-SET,steam@cn,SteamCN
-  - RULE-SET,steam,SteamGlobal
-  ### 其他
-  - RULE-SET,bahamut,Bahamut
-  - RULE-SET,imgur,Imgur
 
-  # 其他
+  - RULE-SET,google,Google
+
+  - RULE-SET,steam@cn,SteamCN
+
   - MATCH,其他
