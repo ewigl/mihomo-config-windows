@@ -96,10 +96,6 @@ proxy-groups:
     filter: "JP|🇯🇵|日本|Japan"
 
   # 服务
-  - name: Google
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/google.png
-    <<: *default-proxies
-
   - name: Microsoft
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/microsoft.png
     <<: *default-proxies
@@ -110,18 +106,8 @@ proxy-groups:
     proxies: [⚡ 直连, 默认, 美国, 台湾, 香港, 狮城, 日本]
 
   # 自定义
-  - name: Elden Ring
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/eldenring.png
-    <<: *all-proxies
-    proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
-
-  - name: FH4
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/fh4.png
-    <<: *all-proxies
-    proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
-
-  - name: NRftW
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/nrftw.png
+  - name: Games
+    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/games.png
     <<: *all-proxies
     proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
 
@@ -148,10 +134,6 @@ rule-providers:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"
 
-  google:
-    <<: *domain
-    url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"
-
   microsoft:
     <<: *domain
     url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"
@@ -175,26 +157,23 @@ rule-providers:
 
 rules:
   # 自定规则
-  ## 直连
   - PROCESS-NAME,piliplus.exe,DIRECT
   - PROCESS-NAME,WeChatAppEx.exe,DIRECT
   - PROCESS-NAME,Weixin.exe,DIRECT
-  ## 选择
-  ### 艾尔登法环
-  - PROCESS-NAME,eldenring.exe,Elden Ring
-  ### 恶意不息
-  - PROCESS-NAME,NoRestForTheWicked.exe,NRftW
-  ### Forza Horizon 4
-  - PROCESS-NAME,ForzaHorizon4.exe,FH4
 
+  - PROCESS-NAME,eldenring.exe,Games
+  - PROCESS-NAME,NoRestForTheWicked.exe,Games
+  - PROCESS-NAME,ForzaHorizon4.exe,Games
+
+  # 规则集
   - RULE-SET,microsoft,Microsoft
+
   - RULE-SET,private,DIRECT
   - RULE-SET,privatecidr,DIRECT,no-resolve
   - RULE-SET,cn,DIRECT
   - RULE-SET,cncidr,DIRECT,no-resolve
 
-  - RULE-SET,google,Google
-
   - RULE-SET,steam@cn,SteamCN
 
+  # 其他
   - MATCH,其他
