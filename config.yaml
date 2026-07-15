@@ -58,7 +58,8 @@ proxy-groups:
   # 默认
   - name: 默认
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/default.png
-    <<: *default-proxies
+    <<: *all-proxies
+    proxies: [自动选择, 美国, 台湾, 香港, 狮城, 日本, ⚡ 直连]
 
   # 自动选择
   - name: 自动选择
