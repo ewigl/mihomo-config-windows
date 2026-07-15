@@ -7,6 +7,8 @@ find-process-mode: always
 
 tcp-concurrent: true
 
+unified-delay: true
+
 external-controller: localhost:9090
 external-ui: ui
 external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
