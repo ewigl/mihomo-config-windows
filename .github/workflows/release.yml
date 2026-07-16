@@ -42,6 +42,7 @@ jobs:
           echo "dashboard_version=$DASHBOARD_V" >> "$GITHUB_OUTPUT"
 
   setup-tag:
+    if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'release' }}
     needs: get-latest-versions
     runs-on: ubuntu-latest
     permissions:
@@ -67,15 +68,12 @@ jobs:
           echo "tag_name=$TIMESTAMP_TAG" >> "$GITHUB_OUTPUT"
 
   upload-raw:
-    needs: setup-tag
     runs-on: ubuntu-latest
     permissions:
       contents: read
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
-        with:
-          ref: ${{ needs.setup-tag.outputs.tag_name }}
 
       - name: Upload raw artifacts
         uses: actions/upload-artifact@v7
@@ -85,12 +83,11 @@ jobs:
             config.yaml
 
   build-windows:
-    needs: [get-latest-versions, setup-tag]
+    needs: [get-latest-versions]
     uses: ./.github/workflows/build-windows.yml
     with:
       mihomo_version: ${{ needs.get-latest-versions.outputs.mihomo_version }}
       dashboard_version: ${{ needs.get-latest-versions.outputs.dashboard_version }}
-      tag: ${{ needs.setup-tag.outputs.tag_name }}
 
   create-release:
     if: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.action == 'release' }}
@@ -110,7 +107,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.setup-tag.outputs.tag_name }}
-          name: Release ${{ needs.setup-tag.outputs.tag_name }}
+          name: v${{ needs.setup-tag.outputs.tag_name }}
           files: artifacts/*
           generate_release_notes: false
           body: |
