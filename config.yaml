@@ -29,16 +29,16 @@ dns:
   cache-algorithm: arc
   listen: :53
   enhanced-mode: redir-host
+  default-nameserver:
+    - 223.5.5.5
   nameserver-policy:
     "rule-set:cn":
       - https://dns.alidns.com/dns-query
       - https://doh.pub/dns-query
   nameserver:
-    - https://dns.alidns.com/dns-query
     - tls://223.5.5.5
+    - https://dns.alidns.com/dns-query
   fallback:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
     - tls://1.1.1.1
     - tls://8.8.8.8
   fallback-filter:
