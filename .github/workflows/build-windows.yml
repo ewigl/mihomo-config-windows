@@ -71,6 +71,13 @@ jobs:
           cd ..
           rm mihomo_win.zip
 
+      - name: Download geoip & geosite
+        run: |
+          echo "Downloading geoip.metadb..."
+          curl -fSL -o staging/geoip.metadb https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geoip.metadb
+          echo "Downloading geosite.dat..."
+          curl -fSL -o staging/geosite.dat https://github.com/MetaCubeX/meta-rules-dat/releases/download/latest/geosite.dat
+
       - name: Create zip package
         id: package
         run: |
