@@ -126,11 +126,6 @@ proxy-groups:
     <<: *all-proxies
     proxies: [香港, 默认, 美国, 台湾, 狮城, 日本, ⚡ 直连]
 
-  # 其他
-  - name: 其他
-    icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/misc.png
-    <<: *default-proxies
-
   # 全局
   - name: GLOBAL
     icon: https://raw.githubusercontent.com/ewigl/licons/refs/heads/main/logos/global.png
@@ -190,5 +185,5 @@ rules:
 
   - RULE-SET,steam@cn,SteamCN
 
-  # 其他
-  - MATCH,其他
+  # 默认
+  - MATCH,默认
