@@ -5,6 +5,7 @@ ipv6: true
 
 find-process-mode: always
 
+unified-delay: true
 tcp-concurrent: true
 
 external-controller: localhost:9090
@@ -29,23 +30,23 @@ dns:
   cache-algorithm: arc
   listen: :53
   enhanced-mode: redir-host
-  default-nameserver:
-    - 223.5.5.5
-  nameserver-policy:
-    "rule-set:cn":
-      - https://dns.alidns.com/dns-query
-      - https://doh.pub/dns-query
-  nameserver:
-    - tls://223.5.5.5
-    - https://dns.alidns.com/dns-query
-  fallback:
-    - tls://1.1.1.1
-    - tls://8.8.8.8
-  fallback-filter:
-    geoip: true
-    geoip-code: CN
-    geosite:
-      - gfw
+  # default-nameserver:
+  #   - 223.5.5.5
+  # nameserver-policy:
+  #   "rule-set:cn":
+  #     - https://dns.alidns.com/dns-query
+  #     - https://doh.pub/dns-query
+  # nameserver:
+  #   - tls://223.5.5.5
+  #   - https://dns.alidns.com/dns-query
+  # fallback:
+  #   - tls://1.1.1.1
+  #   - tls://8.8.8.8
+  # fallback-filter:
+  #   geoip: true
+  #   geoip-code: CN
+  #   geosite:
+  #     - gfw
 
 proxies:
   - name: ⚡ 直连
