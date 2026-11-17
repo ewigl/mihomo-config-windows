@@ -1,5 +1,7 @@
 # Mihomo 配置文件 - Windows
 
+> 自用配置文件，已改用 sing-box，暂时不再更新。
+
 https://ewigl.github.io/projects/mihomo/
 
 - 内核使用 `amd64-v3` 版本。
